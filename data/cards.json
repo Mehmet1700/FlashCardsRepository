@@ -1,0 +1,770 @@
+[
+  {
+    "id": "4ju19q3l4al3",
+    "front": "=Olá",
+    "back": "=Hallo",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:32.975Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:32.975Z"
+  },
+  {
+    "id": "y1k7474k6bfn",
+    "front": "=Bom dia",
+    "back": "=Guten Morgen",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:32.976Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:32.976Z"
+  },
+  {
+    "id": "fa3qjd4y5e5u",
+    "front": "=Boa tarde",
+    "back": "=Guten Tag",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:32.977Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:32.977Z"
+  },
+  {
+    "id": "fou78q5hgzia",
+    "front": "=Boa noite",
+    "back": "=Guten Abend / Nacht",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.050Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.050Z"
+  },
+  {
+    "id": "akoj9tfz5eqs",
+    "front": "=Como está?",
+    "back": "=Wie geht es Ihnen?",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.051Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.051Z"
+  },
+  {
+    "id": "v967zi4szojy",
+    "front": "=Como estás",
+    "back": "=Wie geht es dir?",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.052Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.052Z"
+  },
+  {
+    "id": "n31vg7da9uqx",
+    "front": "=Sim",
+    "back": "=Ja",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.053Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.053Z"
+  },
+  {
+    "id": "igp50ntib9ck",
+    "front": "=Não",
+    "back": "=Nein",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.054Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.054Z"
+  },
+  {
+    "id": "y1nc65kheeg5",
+    "front": "=Obrigado",
+    "back": "=Danke (männlich)",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.079Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.079Z"
+  },
+  {
+    "id": "qlvvo4wper8s",
+    "front": "=Desculpe",
+    "back": "=Entschuldigung",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.172Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.172Z"
+  },
+  {
+    "id": "zybnb3lbgq6u",
+    "front": "=Por favor",
+    "back": "=Bitte",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.172Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.172Z"
+  },
+  {
+    "id": "iuwv6acnnn03",
+    "front": "=Obrigada",
+    "back": "=Danke (weiblich)",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.265Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.265Z"
+  },
+  {
+    "id": "ptq4onp69mb1",
+    "front": "=Não percebo",
+    "back": "=Ich verstehe nicht",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.268Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.268Z"
+  },
+  {
+    "id": "uoc9kddz8sdf",
+    "front": "=Pode repetir",
+    "back": "=Können Sie es wiederholen",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.359Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.359Z"
+  },
+  {
+    "id": "z2tzyu208k8a",
+    "front": "=bica",
+    "back": "=portugiesische Espresso",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.374Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.374Z"
+  },
+  {
+    "id": "cz75t5ypjx5c",
+    "front": "=café",
+    "back": "=Kaffee",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.460Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.460Z"
+  },
+  {
+    "id": "9r9m7cgfon4e",
+    "front": "=Um café",
+    "back": "=ein Kaffee",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.473Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.473Z"
+  },
+  {
+    "id": "64phmfiiicrq",
+    "front": "=água",
+    "back": "=Wasser",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.672Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.672Z"
+  },
+  {
+    "id": "behcqpmv3vyi",
+    "front": "=cerveja",
+    "back": "=Bier",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.761Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.761Z"
+  },
+  {
+    "id": "vorym3v5lkoc",
+    "front": "=Uma água",
+    "back": "=Ein Wasser",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.854Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.854Z"
+  },
+  {
+    "id": "z1y93pf9mtga",
+    "front": "=Vinho",
+    "back": "=Wein",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.878Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.878Z"
+  },
+  {
+    "id": "jcr88ly765pv",
+    "front": "=pão",
+    "back": "=Brot",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.967Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.967Z"
+  },
+  {
+    "id": "wst8i0ca86wl",
+    "front": "=pastel de nata",
+    "back": "=Port. Törtchen",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:33.977Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:33.977Z"
+  },
+  {
+    "id": "kpk5tyle71e3",
+    "front": "=Conta",
+    "back": "=Rechnung",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:57:34.057Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:57:34.057Z"
+  },
+  {
+    "id": "59vntvb8o4ur",
+    "front": "=Bom dia",
+    "back": "=Guten Morgen",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:25.851Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:25.851Z"
+  },
+  {
+    "id": "fu0ykxi77ofi",
+    "front": "=Olá",
+    "back": "=Hallo",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:25.966Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:25.966Z"
+  },
+  {
+    "id": "oui815r3jwpl",
+    "front": "=Como está?",
+    "back": "=Wie geht es Ihnen?",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:25.973Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:25.973Z"
+  },
+  {
+    "id": "4tjlmmr9sy5d",
+    "front": "=Boa noite",
+    "back": "=Guten Abend",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.058Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.058Z"
+  },
+  {
+    "id": "g1esmdty3gc7",
+    "front": "=Boa tarde",
+    "back": "=Guten Tag",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.059Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.059Z"
+  },
+  {
+    "id": "hy57ce3ki390",
+    "front": "=Como estas",
+    "back": "=Wie geht es dir?",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.069Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.069Z"
+  },
+  {
+    "id": "k00yuv4vyygx",
+    "front": "=Sim",
+    "back": "=Ja",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.152Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.152Z"
+  },
+  {
+    "id": "7jn6vxh5fto5",
+    "front": "=Não",
+    "back": "=Nein",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.190Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.190Z"
+  },
+  {
+    "id": "2r3sj4zc5l6b",
+    "front": "=Por favor",
+    "back": "=Bitte",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.279Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.279Z"
+  },
+  {
+    "id": "ak1xffz6kx84",
+    "front": "=Obrigado",
+    "back": "=Danke (männlich)",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.359Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.359Z"
+  },
+  {
+    "id": "ivib22ky6prd",
+    "front": "=Obrigada",
+    "back": "=Danke (weiblich)",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.380Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.380Z"
+  },
+  {
+    "id": "hq5tr7no0o88",
+    "front": "=Desculpe",
+    "back": "=Entschuldigung",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.469Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.469Z"
+  },
+  {
+    "id": "3pvvjcqfnf4h",
+    "front": "=Pode repetir",
+    "back": "=Können sie es wiederholen",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.482Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.482Z"
+  },
+  {
+    "id": "y2yhtjfi4732",
+    "front": "=Não percebo",
+    "back": "=Ich verstehe nicht",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.486Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.486Z"
+  },
+  {
+    "id": "588kion1jxmr",
+    "front": "=café",
+    "back": "=Kaffee",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.583Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.583Z"
+  },
+  {
+    "id": "2zgtoehoah44",
+    "front": "=Um café",
+    "back": "=ein Kaffee",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.677Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.677Z"
+  },
+  {
+    "id": "65jguq948vq0",
+    "front": "=bica",
+    "back": "=portugiesische Espresso",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.688Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.688Z"
+  },
+  {
+    "id": "u091o4ie1o79",
+    "front": "=água",
+    "back": "=Wasser",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.763Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.763Z"
+  },
+  {
+    "id": "o7tq37lze96t",
+    "front": "=Uma água",
+    "back": "=Ein Wasser",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.768Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.768Z"
+  },
+  {
+    "id": "i86c3qyvhikx",
+    "front": "=cerveja",
+    "back": "=Bier",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.775Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.775Z"
+  },
+  {
+    "id": "m0ydncr530xo",
+    "front": "=Vinho",
+    "back": "=Wein",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.873Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.873Z"
+  },
+  {
+    "id": "scrgnfgszsy3",
+    "front": "=pão",
+    "back": "=Brot",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.957Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.957Z"
+  },
+  {
+    "id": "mgbksdr3oifm",
+    "front": "=pastel de nata",
+    "back": "=port. Törtchen",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.967Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.967Z"
+  },
+  {
+    "id": "owajwa6vs8y5",
+    "front": "=Conta",
+    "back": "=Rechnung",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:59:26.972Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:59:26.972Z"
+  }
+]

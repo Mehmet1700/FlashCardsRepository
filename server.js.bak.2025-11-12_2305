@@ -1,0 +1,144 @@
+import express from "express";
+import fs from "fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
+import helmet from "helmet";
+import cors from "cors";
+import morgan from "morgan";
+import { customAlphabet } from "nanoid";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const PORT = process.env.PORT || 3002;
+const WRITE_TOKEN = process.env.WRITE_TOKEN || "";
+const ORIGIN = process.env.ALLOW_ORIGIN || "";
+
+const app = express();
+app.disable("x-powered-by");
+app.use(helmet({ contentSecurityPolicy: false }));
+app.use(morgan("tiny"));
+app.use(express.json({ limit: "1mb" }));
+
+// CORS
+const corsOrigins = [ORIGIN].filter(Boolean);
+app.use(cors({
+  origin: (origin, cb) => {
+    if (!origin || corsOrigins.length === 0 || corsOrigins.includes(origin)) return cb(null, true);
+    return cb(null, false);
+  }
+}));
+
+const DATA_DIR  = path.join(__dirname, "data");
+const DATA_FILE = path.join(DATA_DIR, "cards.json");
+
+// Unique tmp file per write to avoid clobbering
+function tmpPath() {
+  return path.join(DATA_DIR, `cards.tmp.${process.pid}.${Date.now()}.json`);
+}
+
+const nanoid = customAlphabet("0123456789abcdefghijklmnopqrstuvwxyz", 12);
+
+// Ensure file exists
+await fs.mkdir(DATA_DIR, { recursive: true }).catch(()=>{});
+try { await fs.access(DATA_FILE); } catch { await fs.writeFile(DATA_FILE, "[]", "utf8"); }
+
+async function readCards() {
+  const txt = await fs.readFile(DATA_FILE, "utf8");
+  return JSON.parse(txt);
+}
+async function writeCards(cards) {
+  const json = JSON.stringify(cards, null, 2);
+  const tmp = tmpPath();
+  await fs.writeFile(tmp, json, "utf8");
+  await fs.rename(tmp, DATA_FILE); // atomic replace
+}
+
+// ---- simple in-process write queue ----
+let writeChain = Promise.resolve();
+function enqueueWrite(fn) {
+  writeChain = writeChain.then(async () => {
+    const current = await readCards();
+    const next = await fn(current);
+    await writeCards(next);
+  }).catch(err => {
+    console.error("write_failed:", err);
+    // swallow to keep the chain healthy; the request that triggered this will throw below
+  });
+  return writeChain;
+}
+// --------------------------------------
+
+// GET /api/cards
+app.get("/api/cards", async (_req, res) => {
+  try {
+    const cards = await readCards();
+    res.set("Cache-Control", "no-store");
+    res.json({ cards, count: cards.length });
+  } catch (err) {
+    console.error("read_failed:", err);
+    res.status(500).json({ error: "read_failed" });
+  }
+});
+
+// POST /api/cards  (one or many)
+app.post("/api/cards", async (req, res) => {
+  try {
+    const auth = req.get("Authorization") || "";
+    const token = auth.startsWith("Bearer ") ? auth.slice(7) : "";
+    if (!WRITE_TOKEN || token !== WRITE_TOKEN) {
+      return res.status(401).json({ error: "unauthorized" });
+    }
+
+    const incoming = Array.isArray(req.body) ? req.body : [req.body];
+    const now = new Date().toISOString();
+
+    const sanitized = incoming.map((c) => {
+      if (!c) return null;
+      const front = String(c.front ?? c.portuguese ?? "").trim();
+      const backIn = c.back ?? c.translation ?? "";
+      const back = Array.isArray(backIn) ? backIn.join(" / ") : String(backIn).trim();
+      if (!front || !back) return null;
+      return {
+        id: c.id || nanoid(),
+        front, back,
+        lang_from: c.lang_from || "pt",
+        lang_to:   c.lang_to   || "de",
+        tags: Array.isArray(c.tags) ? c.tags.slice(0,10) : [],
+        ease: Number(c.ease ?? 2.5),
+        interval: Number(c.interval ?? 0),
+        next_review: c.next_review || now,
+        lapses: Number(c.lapses ?? 0),
+        created_at: c.created_at || now
+      };
+    }).filter(Boolean);
+
+    if (!sanitized.length) return res.status(400).json({ error: "invalid_payload" });
+
+    // queue the mutation so writes don't collide
+    await enqueueWrite(async (cards) => {
+      const idx = new Map(cards.map((x,i)=>[x.id, i]));
+      for (const n of sanitized) {
+        if (idx.has(n.id)) {
+          cards[idx.get(n.id)] = { ...cards[idx.get(n.id)], ...n };
+        } else {
+          cards.push(n);
+        }
+      }
+      return cards;
+    });
+
+    // re-read length to report a correct total
+    const after = await readCards();
+    res.json({ ok: true, added: sanitized.length, total: after.length });
+  } catch (err) {
+    console.error("write_failed:", err);
+    res.status(500).json({ error: "write_failed" });
+  }
+});
+
+// static SPA
+app.use(express.static(path.join(__dirname, "public"), { extensions: ["html"] }));
+app.get("*", (_req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
+
+app.listen(PORT, () => console.log(`Flashcards listening on http://127.0.0.1:${PORT}`));

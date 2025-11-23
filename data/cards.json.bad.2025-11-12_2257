@@ -1,0 +1,36 @@
+[
+  {
+    "id": "ky9uav1b5cw5",
+    "front": "olá",
+    "back": "hallo",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "de"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:28:15.163Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:28:15.163Z"
+  },
+  {
+    "id": "qq542c5sdajc",
+    "front": "=Olá",
+    "back": "=Hallo",
+    "lang_from": "pt",
+    "lang_to": "de",
+    "tags": [
+      "pt",
+      "ocr"
+    ],
+    "ease": 2.5,
+    "interval": 0,
+    "next_review": "2025-11-12T22:52:10.971Z",
+    "lapses": 0,
+    "created_at": "2025-11-12T22:52:10.971Z"
+  }
+]2:52:11.059Z"
+  }
+]
