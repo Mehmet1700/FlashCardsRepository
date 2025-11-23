@@ -110,12 +110,19 @@ el('btn-token').onclick = async ()=>{
 
 // ----- load & study -----
 async function load(){
-  const r = await fetch(API, {cache:'no-store'});
-  const d = await r.json();
-  cards = d.cards || [];
-  queue = cards.slice().sort((a,b) => new Date(a.next_review||0)-new Date(b.next_review||0));
-  renderStats();
-  next();
+  try {
+    const r = await fetch(API, {cache:'no-store'});
+    if (!r.ok) throw new Error(`HTTP \${r.status}`);
+    const d = await r.json();
+    cards = d.cards || [];
+    queue = cards.slice().sort((a,b) => new Date(a.next_review||0)-new Date(b.next_review||0));
+    renderStats();
+    next();
+  } catch (e) {
+    el('stats').textContent = `Error loading cards: \${e.message}`;
+    el('stats').style.color = 'red';
+    console.error(e);
+  }
 }
 
 function next(){
