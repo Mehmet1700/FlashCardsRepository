@@ -1,0 +1,10 @@
+
+> flashcards-app@1.0.0 start
+> node server.js
+
+Flashcards listening on http://127.0.0.1:3002
+POST /api/cards 200 32 - 9.278 ms
+GET /api/cards 200 11415 - 7.392 ms
+POST /api/cards 200 32 - 10.296 ms
+GET /api/cards 200 11409 - 1.052 ms
+DELETE /api/cards/tbfjou6d832o 200 31 - 13.215 ms

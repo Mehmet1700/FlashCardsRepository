@@ -95,6 +95,9 @@ function sanitizeCard(c) {
     interval: Number(c.interval ?? 0),
     next_review: c.next_review || now,
     lapses: Number(c.lapses ?? 0),
+    again_count: Number(c.again_count ?? 0),
+    good_count: Number(c.good_count ?? 0),
+    easy_count: Number(c.easy_count ?? 0),
     created_at: c.created_at || now
   };
 }
