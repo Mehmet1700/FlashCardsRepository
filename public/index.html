@@ -5,162 +5,321 @@
 <title>Flashcards</title>
 <style>
   :root {
-    --pad: 16px;
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-hover: #334155;
+    --border: #334155;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary: #8b5cf6;
+    --primary-hover: #7c3aed;
+    --success: #10b981;
+    --danger: #ef4444;
     --radius: 16px;
-    --border: #e5e7eb
+    --pad: 20px;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
   }
 
   * {
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
   body {
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     margin: 0;
-    color: #0b1220
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
+  /* Header */
   .header {
     position: sticky;
     top: 0;
-    background: #fff;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    padding: 8px var(--pad);
+    padding: 16px var(--pad);
     display: flex;
-    gap: 8px;
+    gap: 12px;
     align-items: center;
-    z-index: 10
+    z-index: 50;
   }
 
   .header h1 {
-    font-size: 18px;
+    font-size: 20px;
     margin: 0;
     font-weight: 700;
-    flex: 1
+    background: linear-gradient(to right, #c084fc, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    flex: 1;
+    letter-spacing: -0.5px;
   }
 
+  /* Buttons */
   .btn {
-    padding: 10px 12px;
-    border: 1px solid #ccc;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
     border-radius: 12px;
-    background: #fff;
-    cursor: pointer
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+  }
+
+  .btn:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+  }
+
+  .btn:active {
+    transform: translateY(0);
   }
 
   .btn.primary {
-    border-color: #111;
-    background: #111;
-    color: #fff
+    border-color: var(--primary);
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
   }
 
+  .btn.primary:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+  }
+
+  /* Layout */
   .container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: var(--pad)
+    padding: var(--pad);
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
+  /* Cards */
   .card {
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 24px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
-    margin-top: 16px
+    padding: 32px;
+    box-shadow: var(--shadow);
+    margin-top: 24px;
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Study View */
+  #view-study {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-height: 50vh;
+  }
+
+  #study-card {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
   .front {
-    font-size: 1.4rem;
-    font-weight: 700
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.3;
   }
 
   .back {
-    font-size: 1.15rem;
-    margin-top: 12px;
-    display: none
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 
   .row {
     display: flex;
-    gap: 8px;
-    margin-top: 16px;
-    flex-wrap: wrap
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .row .btn {
-    flex: 1
+    flex: 1;
+    min-width: 100px;
   }
 
-  .muted {
-    color: #6b7280;
-    font-size: .9rem;
-    margin-top: 6px
-  }
-
+  /* Tabs */
   .tabs {
     display: flex;
-    gap: 8px
+    gap: 8px;
+    background: var(--surface);
+    padding: 4px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
   }
 
   .tab {
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: #fff;
-    cursor: pointer
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .tab:hover {
+    color: var(--text);
   }
 
   .tab.active {
-    background: #111;
-    color: #fff;
-    border-color: #111
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
 
+  /* Manage View */
   .toolbar {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin: 12px 0
+    gap: 12px;
+    margin-bottom: 24px;
   }
 
   input[type="text"],
   input[type="search"],
   textarea {
     width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 10px
+    padding: 12px 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
   }
 
   .table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 12px;
   }
 
-  .table th,
-  .table td {
-    border-bottom: 1px solid var(--border);
-    padding: 10px;
+  .table th {
     text-align: left;
-    vertical-align: top
+    padding: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
   }
 
-  .table td.actions {
-    width: 130px
+  .table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
   }
 
-  .badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border: 1px solid #d1d5db;
-    border-radius: 999px;
-    font-size: .8rem;
-    margin-right: 6px;
-    color: #374151
+  .table tr:last-child td {
+    border-bottom: none;
   }
 
-  @media (min-width:700px) {
-    .row .btn {
-      flex: unset
+  .table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .table input,
+  .table textarea {
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .table input:hover,
+  .table textarea:hover {
+    border-color: var(--border);
+    background: var(--bg);
+  }
+
+  .table input:focus,
+  .table textarea:focus {
+    border-color: var(--primary);
+    background: var(--bg);
+  }
+
+  .muted {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .header {
+      flex-wrap: wrap;
+    }
+
+    .header h1 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .tabs {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn-token {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 6px 10px;
+      font-size: 0.8rem;
     }
   }
 </style>
@@ -168,9 +327,12 @@
 <body>
   <div class="header">
     <h1>Flashcards</h1>
-    <button id="tab-study" class="tab active">Study</button>
-    <button id="tab-manage" class="tab">Manage</button>
-    <button id="btn-token" class="btn">Admin Token</button>
+    <div class="tabs">
+      <button id="tab-study" class="tab active">Study</button>
+      <button id="tab-manage" class="tab">Manage</button>
+    </div>
+    <button id="btn-shuffle" class="btn" title="Shuffle Cards" style="padding: 8px 12px;">🔀</button>
+    <button id="btn-token" class="btn btn-token">Admin</button>
   </div>
 
   <div class="container">
@@ -182,10 +344,10 @@
         <div id="front" class="front"></div>
         <div id="back" class="back"></div>
         <div class="row">
-          <button id="show" class="btn">Show</button>
-          <button id="again" class="btn" hidden>Again</button>
-          <button id="good" class="btn primary" hidden>Good</button>
-          <button id="easy" class="btn" hidden>Easy</button>
+          <button id="show" class="btn primary">Show Answer</button>
+          <button id="again" class="btn" style="border-color: var(--danger); color: var(--danger)" hidden>Again</button>
+          <button id="good" class="btn" style="border-color: var(--primary); color: var(--primary)" hidden>Good</button>
+          <button id="easy" class="btn" style="border-color: var(--success); color: var(--success)" hidden>Easy</button>
         </div>
       </div>
     </div>
@@ -194,21 +356,23 @@
     <div id="view-manage" hidden>
       <div class="card">
         <div class="toolbar">
-          <input id="search" type="search" placeholder="Search front/back/tags…">
-          <button id="btn-add" class="btn">Add New</button>
+          <input id="search" type="search" placeholder="Search cards…">
+          <button id="btn-add" class="btn primary">Add New</button>
         </div>
-        <div class="muted">Edits & deletes require admin token (stored locally in your browser).</div>
-        <table class="table" id="table">
-          <thead>
-            <tr>
-              <th>Front</th>
-              <th>Back</th>
-              <th>Tags</th>
-              <th class="actions">Actions</th>
-            </tr>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
+        <div class="muted">Edits require admin token.</div>
+        <div style="overflow-x: auto;">
+          <table class="table" id="table">
+            <thead>
+              <tr>
+                <th style="width: 35%">Front</th>
+                <th style="width: 35%">Back</th>
+                <th style="width: 15%">Tags</th>
+                <th style="width: 15%">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -225,8 +389,34 @@
     }
     function due(c) { return !c.next_review || new Date(c.next_review) <= new Date(); }
     function renderStats() { el('stats').textContent = `${queue.filter(due).length} due / ${cards.length} total`; }
-    function sanitize(s) { return String(s ?? '').replace(/^=+\\s*/, '').trim(); }
+    function sanitize(s) { return String(s ?? '').replace(/^=+\s*/, '').trim(); }
     function tagstr(t) { return (Array.isArray(t) ? t : []).join(', '); }
+
+    // ----- shuffle -----
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    el('btn-shuffle').onclick = () => {
+      if (queue.length < 2) return;
+      queue = shuffle(queue);
+      next();
+      // Simple toast
+      const msg = document.createElement('div');
+      msg.textContent = 'Cards Shuffled 🔀';
+      Object.assign(msg.style, {
+        position: 'fixed', bottom: '20px', left: '50%', transform: 'translateX(-50%)',
+        background: 'var(--surface)', color: 'var(--text)', padding: '10px 20px',
+        borderRadius: '99px', border: '1px solid var(--primary)', zIndex: 100,
+        boxShadow: '0 4px 12px rgba(0,0,0,0.3)', animation: 'slideUp 0.3s ease'
+      });
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 2000);
+    };
 
     // ----- tabs -----
     function setTab(name) {
@@ -270,8 +460,8 @@
       if (queue.filter(due).length === 0) { wrap.hidden = true; el('stats').textContent = 'All done 🎉'; return; }
       wrap.hidden = false;
       const c = queue.find(due);
-      el('front').textContent = c.front;
-      const back = el('back'); back.textContent = c.back; back.style.display = 'none';
+      el('front').textContent = sanitize(c.front);
+      const back = el('back'); back.textContent = sanitize(c.back); back.style.display = 'none';
 
       el('show').hidden = false; el('again').hidden = true; el('good').hidden = true; el('easy').hidden = true;
 
@@ -283,10 +473,26 @@
 
     function schedule(card, rating) {
       const now = new Date();
-      const ease = Math.max(1.3, (card.ease || 2.5) + (rating === 'easy' ? +0.15 : rating === 'again' ? -0.2 : 0));
+      let ease = card.ease || 2.5;
       let iv = card.interval || 0;
-      if (rating === 'again') { iv = 0.01; } else if (iv === 0) { iv = 1; } else { iv = Math.round(iv * ease); }
+
+      if (rating === 'again') {
+        // Forgot: Reset progress, harder next time
+        ease = Math.max(1.3, ease - 0.2);
+        iv = 0.005; // ~7 minutes (effectively "now" for next sort)
+      } else if (rating === 'good') {
+        // Remembered: Standard progression
+        if (iv < 0.5) iv = 1; // First graduation -> 1 day
+        else iv = Math.round(iv * ease);
+      } else if (rating === 'easy') {
+        // Too easy: Boost interval and ease
+        ease += 0.15;
+        if (iv < 0.5) iv = 4; // First graduation -> 4 days
+        else iv = Math.round(iv * ease * 1.3); // 1.3x bonus
+      }
+
       const next = new Date(now.getTime() + iv * 86400000);
+      console.log(`[Schedule] Rating: ${rating}, New Interval: ${iv} days, Next Review: ${next.toLocaleString()}`);
       Object.assign(card, { ease, interval: iv, next_review: next.toISOString() });
     }
 
@@ -325,8 +531,8 @@
       for (const c of filtered()) {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-      <td><input data-k="front"  data-id="${c.id}" value="${c.front?.replace(/"/g, '&quot;') || ''}" /></td>
-      <td><textarea data-k="back" data-id="${c.id}">${c.back || ''}</textarea></td>
+      <td><input data-k="front"  data-id="${c.id}" value="${sanitize(c.front).replace(/"/g, '&quot;') || ''}" /></td>
+      <td><textarea data-k="back" data-id="${c.id}">${sanitize(c.back) || ''}</textarea></td>
       <td><input data-k="tags"   data-id="${c.id}" value="${(c.tags || []).join(', ')}" /></td>
       <td class="actions">
         <button class="btn" data-act="save" data-id="${c.id}">Save</button>
